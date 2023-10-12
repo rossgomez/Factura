@@ -29,7 +29,7 @@ const systemConfig = {
 const datilConfig = {
   apiKey: '__MI_API_KEY_SECRETO__',
   password: '__MI_PASS__',
-  codigoIVA: '2', // 12%
+  codigoIVA: '9', // 12%
   emision: {
     ambiente: 1, // pruebas
     moneda: 'USD',

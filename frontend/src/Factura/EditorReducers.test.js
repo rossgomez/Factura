@@ -697,7 +697,7 @@ describe('EditorReducers', () => {
             id: '999999999',
             nombreAscii: 'consumidor final',
             nombre: 'Consumidor Final',
-            direccion: 'Guayaquil',
+            direccion: 'Ypacarai',
             email: 'none@gmail.com',
             telefono1: '555555',
             telefono2: '',

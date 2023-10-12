@@ -12,7 +12,7 @@ export default class ProductoFormView extends React.Component {
     const { errors, inputs, updateData } = this.props;
 
     const codigoInput = {
-      hintText: 'Registro Sanitario',
+      hintText: 'Concepto',
       icon: Info,
       value: inputs.codigo || '',
       errorText: errors.codigo,

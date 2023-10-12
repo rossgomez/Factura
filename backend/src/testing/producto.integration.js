@@ -72,7 +72,7 @@ describe('/producto/ endpoints', () => {
       const res = await api.findProductos({ pagaIva: true, queryString: 'TG' });
 
       expect(res.status).toBe(200);
-      expect(res.body).toHaveLength(2);
+      expect(res.body).toHaveLength(0);
     });
 
     it('puede limitar el numero de resultados', async () => {

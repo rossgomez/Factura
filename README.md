@@ -73,7 +73,7 @@ const emision = {
 
 const apiKey = '__MI_API_KEY__';
 const password = '__MI_PASSWORD__';
-const codigoIVA = '2' // 12%
+const codigoIVA = '9' // 12%
 
 module.exports = {
   emision, apiKey, password, codigoIVA

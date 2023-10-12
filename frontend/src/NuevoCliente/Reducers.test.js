@@ -54,7 +54,7 @@ describe('Nuevo cliente reducers', () => {
     API.updateCliente.mockReturnValueOnce(Promise.resolve());
 
     const actions = [
-      { type: Actions.updateInput, key: 'direccion', value: 'Guayaquil' },
+      { type: Actions.updateInput, key: 'direccion', value: 'Ypacarai' },
       { type: Actions.updateInput, key: 'email', value: 'none@somewhere.com' },
       { type: Actions.guardar, callback: cerrarDialog }
     ];

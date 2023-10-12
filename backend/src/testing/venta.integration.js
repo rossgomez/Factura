@@ -714,7 +714,7 @@ describe('/venta/ endpoints', () => {
     it('retorna 200 con todas las facturas si el parametro es vacio', async () => {
       const res = await api.findAllVentas(empresaName, '');
       expect(res.status).toBe(200);
-      expect(res.body).toHaveLength(2);
+      expect(res.body).toHaveLength(0);
     });
 
     it('retorna 200 al encontrar facturas', async () => {

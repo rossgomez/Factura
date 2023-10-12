@@ -18,7 +18,7 @@ const noPaddingStyle = { padding: '0px' };
 const RenderTableHeader = props => {
   let regSanCol = (
     <TableHeaderColumn width={80} style={noPaddingStyle}>
-      Reg. Santario
+      Concepto
     </TableHeaderColumn>
   );
   let loteCol = (

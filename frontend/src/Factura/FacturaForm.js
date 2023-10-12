@@ -211,7 +211,7 @@ export default class FacturaForm extends Component {
                 <DateTimeInput {...this.props} />
               </td>
 
-              <td>
+              {/* <td>
                 <IconBox icon={LocalShipping} />
               </td>
               <td>
@@ -223,9 +223,9 @@ export default class FacturaForm extends Component {
                   style={{ width: '80px', marginRight: txtMargin }}
                   inputStyle={{ textAlign: 'right' }}
                 />
-              </td>
+              </td> */}
 
-              <td>
+              {/* <td>
                 <IconBox icon={Loyalty} />
               </td>
               <td>
@@ -242,9 +242,9 @@ export default class FacturaForm extends Component {
                 <span style={{ marginRight: txtMargin, paddingLeft: '9px' }}>
                   %
                 </span>
-              </td>
+              </td> */}
 
-              <td>
+              {/* <td>
                 <IconBox icon={Info} />
               </td>
               <td>
@@ -261,7 +261,7 @@ export default class FacturaForm extends Component {
                     marginRight: txtMargin
                   }}
                 />
-              </td>
+              </td> */}
 
               <td>
                 <IconBox icon={Payment} />

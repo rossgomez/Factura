@@ -59,7 +59,7 @@ const drawInvoiceInfoContents = (doc, { ventaRow, clienteRow }) => {
   doc.fontSize(11);
   doc.lineGap(3);
   doc
-    .text('Guayaquil: ', topTableStart.x, topTableStart.y)
+    .text('Ypacarai: ', topTableStart.x, topTableStart.y)
     .text('Nombre: ')
     .text('Dirección: ')
     .text('Teléfono: ');
@@ -89,10 +89,10 @@ const drawFacturableDescription = (doc, facturable, detallado, linePos) => {
   if (detallado) {
     const detalleString =
       facturable.lote !== ''
-        ? `MARCA: ${facturable.marca} LOTE: ${facturable.lote} REG. SAN: ${
+        ? `MARCA: ${facturable.marca} LOTE: ${facturable.lote} CONCEPTO: ${
             facturable.codigo
           } FECHA: ${facturable.fechaExp}`
-        : `MARCA: ${facturable.marca} REG. SAN: ${facturable.codigo} FECHA: ${
+        : `MARCA: ${facturable.marca} CONCEPTO: ${facturable.codigo} FECHA: ${
             facturable.fechaExp
           }`;
     doc.text(detalleString, descriptionStartX, doc.y, descriptionOptions);

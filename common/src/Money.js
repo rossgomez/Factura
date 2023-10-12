@@ -6,7 +6,7 @@ const fromString = s => {
   return Math.floor(parseFloat(s) * PRECISION);
 };
 
-const print = v => (v / PRECISION).toFixed(2);
+const print = v => (v / PRECISION).toFixed(0);
 
 const printFloat = v => parseFloat(print(v));
 

@@ -7,6 +7,7 @@
     "criptext-js-tools": "^0.7.2"
   },
   "dependencies": {
+    "date-fns": "^2.30.0",
     "deep-freeze": "^0.0.1",
     "fecha": "2.3.1",
     "superagent": "^5.0.5",

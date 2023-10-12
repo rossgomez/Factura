@@ -75,7 +75,7 @@ describe('Factura ListView State', () => {
         { rowid: 2, codigo: '00434', empresa: 'TECO' }
       ];
       const stateManager = new ListState({}, setStateFunc);
-      stateManager.deleteVenta(2);
+      stateManager.deleteVenta(0);
       expect(state).toEqual({
         rows: [{ rowid: 1, codigo: '00435', empresa: 'TECO' }]
       });

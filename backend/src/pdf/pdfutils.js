@@ -136,7 +136,7 @@ const billetesPalabras = billetes => {
 };
 
 const valorPalabras = valorRaw => {
-  const valor = Number(valorRaw).toFixed(2);
+  const valor = Number(valorRaw).toFixed(0);
   const decimales = valor.split('.')[1];
   const billetes = Math.trunc(valor);
   return `${billetesPalabras(billetes)} CON ${decimales}/100 DÓLARES`;

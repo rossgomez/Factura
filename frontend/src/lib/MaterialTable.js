@@ -178,7 +178,7 @@ export default class MaterialTable extends React.Component {
               columnTypes &&
               columnTypes[j] === MaterialTable.ColumnTypes.numeric
             ) {
-              dataToDisplay = Number(row[propName]).toFixed(2);
+              dataToDisplay = Number(row[propName]).toFixed(0);
               columnStyle = { textAlign: 'right' };
             }
             return (
