@@ -158,7 +158,7 @@ const getCliente = rowid => {
 const getUnidadesFromVenta = ventaId => {
   return knex
     .select(
-      'productosFts.nombre',
+      //'productosFts.nombre',
       'unidades.producto',
       'unidades.count',
       'unidades.precioVenta',
@@ -170,7 +170,7 @@ const getUnidadesFromVenta = ventaId => {
     )
     .from('unidades')
     .join('productos', { 'unidades.producto': 'productos.rowid' })
-    .join('productosFts', { 'productosFts.rowid': 'productos.ftsid' })
+    //.join('productosFts', { 'productosFts.rowid': 'productos.ftsid' })
     .where({ ventaId });
 };
 

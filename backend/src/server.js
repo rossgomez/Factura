@@ -211,7 +211,7 @@ app.post('/producto/delete/:id', (req, res) => {
 
 const verVentaJSON = (req, res) => {
   const { id } = req.params;
-
+  
   const okHandler = body => {
     res.status(200).send(body);
   };
@@ -248,8 +248,9 @@ const verVentaPDF = (req, res) => {
 };
 
 app.get('/venta/ver/:id', (req, res) => {
-  if (req.headers.accept === 'application/json') verVentaJSON(req, res);
-  else verVentaPDF(req, res);
+  /* if (req.headers.accept === 'application/json') verVentaJSON(req, res);
+  else */ 
+  verVentaPDF(req, res);
 });
 
 app.post('/venta/delete/:rowid', validarVentaMutable('params'), (req, res) => {
