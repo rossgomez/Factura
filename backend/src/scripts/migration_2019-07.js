@@ -29,8 +29,9 @@ const copyProductos = async trx => {
   const oldRows = await trx.select().from('productos');
   const newRows = [];
   for (let i = 0; i < oldRows.length; i++) {
-    const { nombreAscii, nombre, marca, ...row } = oldRows[i];
-    const [ftsid] = await trx('productosFts').insert({ nombre, marca });
+    //const { nombreAscii, nombre, marca, ...row } = oldRows[i];
+    const { nombreAscii, nombre,  ...row } = oldRows[i];
+    const [ftsid] = await trx('productosFts').insert({ nombre,  });
     newRows.push({ ...row, ftsid, nombreUnique: nombre });
   }
 

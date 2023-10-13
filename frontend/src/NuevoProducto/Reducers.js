@@ -19,7 +19,7 @@ export const getDefaultState = producto => {
   return {
     inputs: {
       nombre: '',
-      marca: '',
+      //marca: '',
       codigo: '',
       precioVentaText: '',
       precioDistText: '',

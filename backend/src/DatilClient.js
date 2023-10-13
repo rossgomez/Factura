@@ -126,18 +126,21 @@ const crearImpuestosParaItem = (item, importe) => {
 
 const crearNombreDetallado = item => {
   if (item.lote)
-    return `${item.nombre} MARCA: ${item.marca} LOTE: ${item.lote} CONCEPTO: ${
+ // return `${item.nombre} MARCA: ${item.marca} LOTE: ${item.lote} CONCEPTO: ${
+    return `CONCEPTO: ${
       item.codigo
     } FECHA: ${item.fechaExp}`;
 
-  return `${item.nombre} MARCA: ${item.marca} CONCEPTO: ${item.codigo} FECHA: ${
+
+   // return `${item.nombre} MARCA: ${item.marca} CONCEPTO: ${item.codigo} FECHA: ${
+  return `$ CONCEPTO: ${item.codigo} FECHA: ${
     item.fechaExp
   }`;
 };
 
 const crearItemFlete = valor => ({
   nombre: 'Manejo de carga',
-  marca: '',
+  //marca: '',
   codigo: '',
   fecha: '',
   pagaIva: false,

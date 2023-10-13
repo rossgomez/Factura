@@ -183,8 +183,8 @@ const string = ({ fallback, maxLen, allowEmpty } = {}) => (ctx, value) => {
 
 const email = ({ fallback } = {}) => (ctx, value) => {
   if (!value) {
-    if (fallback || fallback === '') return fallback;
-    return new Error(`"${ctx.name}" es requerido`);
+   // if (fallback || fallback === '') return fallback;
+  //  return new Error(`"${ctx.name}" es requerido`);
   }
 
   if (typeof value !== 'string')
@@ -284,11 +284,11 @@ const numericString = ({ fallback, abrv, len, minLen, maxLen } = {}) => (
       : new Error(`"${ctx.name}" debe de ser tipo string`);
 
   const min = minLen || 1;
-  if (len && value.length !== len)
-    return abrv
-      ? new Error(`Inválido`)
-      : new Error(`"${ctx.name}" debe tener exactamente ${len} caracteres.`);
-  else if (maxLen && value.length > maxLen)
+  //if (len && value.length !== len)
+    //return abrv
+      //? new Error(`Inválido`)
+      //: new Error(`"${ctx.name}" debe tener exactamente ${len} caracteres.`);
+   if (maxLen && value.length > maxLen)
     return abrv
       ? new Error(`Inválido`)
       : new Error(`"${ctx.name}" debe de tener menos de ${maxLen} caracteres.`);
@@ -350,7 +350,7 @@ const productoRowSchema = {
   rowid: primaryKey(),
   codigo: string(),
   nombre: string(),
-  marca: string({ fallback: '' }),
+ // marca: string({ fallback: '' }),
   precioDist: int({ min: 0, fallback: 0 }),
   precioVenta: int({ min: 0 }),
   pagaIva: bool()

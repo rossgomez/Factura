@@ -1,21 +1,20 @@
 const format = require('fecha').format;
 
-//const i18nSettings = require('fecha').i18nSettings;
 
 
 
-const i18nSettings = ({
-  dayNamesShort: ['HOLA', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
-  dayNames: ['Sunday', 'HOLA', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-  monthNamesShort: ['HOLA', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  monthNames: ['JHOLA', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'OCTUBRE', 'November', 'December'],
+
+const setGlobalDateI18n=({
+  dayNamesShort: ['Hola', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
+  dayNames: ['Ho', 'holaa', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+  monthNamesShort: ['Jahola', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  monthNames: ['hola', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'holaaaa', 'November', 'December'],
   amPm: ['am', 'pm'],
   // D is the day of the month, function returns something like...  3rd or 11th
   DoFn: function (D) {
-    return D + [ 'HOLA', 'st', 'nd', 'rd' ][ D % 10 > 3 ? 0 : (D - D % 10 !== 10) * D % 10 ];
+    return D + [ 'hola  ', 'hola', 'hola', 'hola' ][ D % 10 > 3 ? 0 : (D - D % 10 !== 10) * D % 10 ];
   }
 });
-
 
 
 /*
@@ -27,14 +26,15 @@ const parseDBDate = fecha => {
 
   //fucking timezones http://stackoverflow.com/a/31732581
   return new Date(fecha.replace(/-/g, '/'));
+ 
 };
 
 const toReadableDate = fecha => {
-  return format(fecha, 'YYYY-MM-DD', i18nSettings);
+  return format(fecha, 'YYYY-MM-DD',setGlobalDateI18n);
 };
 
 const toReadableDateTime = fecha => {
-  return format(fecha, 'YYYY-MM-DD HH:mm',i18nSettings);
+  return format(fecha, 'YYYY-MM-DD HH:mm',setGlobalDateI18n);
 };
 
 const toDatilDate = fecha => {

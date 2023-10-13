@@ -88,13 +88,21 @@ const drawFacturableDescription = (doc, facturable, detallado, linePos) => {
   doc.text(facturable.nombre, descriptionStartX, linePos, descriptionOptions);
   if (detallado) {
     const detalleString =
-      facturable.lote !== ''
+      /* facturable.lote !== ''
         ? `MARCA: ${facturable.marca} LOTE: ${facturable.lote} CONCEPTO: ${
             facturable.codigo
           } FECHA: ${facturable.fechaExp}`
         : `MARCA: ${facturable.marca} CONCEPTO: ${facturable.codigo} FECHA: ${
             facturable.fechaExp
-          }`;
+          }`; */
+
+          facturable.lote !== ''
+          ? `CONCEPTO: ${
+              facturable.codigo
+            } FECHA: ${facturable.fechaExp}`
+          : `CONCEPTO: ${facturable.codigo} FECHA: ${
+              facturable.fechaExp
+            }`;
     doc.text(detalleString, descriptionStartX, doc.y, descriptionOptions);
   }
 };
@@ -264,9 +272,9 @@ module.exports = ({ ventaRow, unidades, pagos, clienteRow }) => {
     const { detallado } = ventaRow;
     const { total } = calcularValoresTotales(
       ventaRow.subtotal,
-      ventaRow.flete,
+      //ventaRow.flete,
       ventaRow.iva,
-      ventaRow.descuento
+      //ventaRow.descuento
     );
     const empresaName = ventaRow.empresa.toUpperCase();
 

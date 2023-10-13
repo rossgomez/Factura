@@ -55,7 +55,7 @@ describe('EditorReducers', () => {
             codigo: '0945',
             nombre: 'HCG Cassette',
             nombreAscii: 'hcg cassette',
-            marca: 'TECO',
+            // marca: 'TECO',
             precioDist: 9900,
             precioVenta: 19900,
             pagaIva: true
@@ -129,7 +129,7 @@ describe('EditorReducers', () => {
             codigo: '0945',
             nombre: 'HCG Cassette',
             nombreAscii: 'hcg cassette',
-            marca: 'TECO',
+            //marca: 'TECO',
             precioDist: 9900,
             precioVenta: 19900,
             pagaIva: true
@@ -206,7 +206,7 @@ describe('EditorReducers', () => {
             codigo: '0945',
             nombre: 'HCG Cassette',
             nombreAscii: 'hcg cassette',
-            marca: 'TECO',
+            //marca: 'TECO',
             precioDist: 9900,
             precioVenta: 19900,
             pagaIva: true
@@ -282,7 +282,7 @@ describe('EditorReducers', () => {
           codigo: '0945',
           nombre: 'HCG Cassette',
           nombreAscii: 'hcg cassette',
-          marca: 'TECO',
+          //marca: 'TECO',
           precioDist: 9900,
           precioVenta: 19900,
           pagaIva: true
@@ -295,7 +295,7 @@ describe('EditorReducers', () => {
           codigo: '0436',
           nombre: 'HCG Tirillas',
           nombreAscii: 'hcg tirillas',
-          marca: 'TECO',
+          //marca: 'TECO',
           precioDist: 9900,
           precioVenta: 19900,
           pagaIva: true
@@ -437,7 +437,7 @@ describe('EditorReducers', () => {
           codigo: '0945',
           nombre: 'HCG Cassette',
           nombreAscii: 'hcg cassette',
-          marca: 'TECO',
+          // marca: 'TECO',
           precioDist: 9900,
           precioVenta: 19900,
           pagaIva: true
@@ -450,7 +450,7 @@ describe('EditorReducers', () => {
           codigo: '0436',
           nombre: 'HCG Tirillas',
           nombreAscii: 'hcg tirillas',
-          marca: 'TECO',
+          //marca: 'TECO',
           precioDist: 9900,
           precioVenta: 19900,
           pagaIva: true
@@ -712,7 +712,7 @@ describe('EditorReducers', () => {
               precioVenta: 2500,
               codigo: 'AD-438-07-12',
               pagaIva: 1,
-              marca: 'BIOPROBA',
+              // marca: 'BIOPROBA',
               lote: '',
               fechaExp: '2020-06-25'
             }
@@ -734,7 +734,7 @@ describe('EditorReducers', () => {
           codigo: '822-RBE-0216',
           nombreAscii: 'hcg cassette 50 pcs toyo ',
           nombre: 'HCG CASSETTE 50 PCS TOYO ',
-          marca: 'TOYO',
+          // marca: 'TOYO',
           precioDist: 195000,
           precioVenta: 350000,
           pagaIva: 1
@@ -886,7 +886,7 @@ describe('EditorReducers', () => {
           codigo: '-',
           nombre: 'Examenes especiales',
           nombreAscii: 'examenes especiales',
-          marca: '',
+          //marca: '',
           precioDist: 0,
           precioVenta: 99900,
           pagaIva: false

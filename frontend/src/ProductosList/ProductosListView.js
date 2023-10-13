@@ -5,14 +5,9 @@ import MaterialTable from '../lib/MaterialTable';
 import ListState from './ListState';
 
 const ColumnTypes = MaterialTable.ColumnTypes;
-const columns = ['Concepto', 'Nombre', 'Precio Venta'];
-const keys = ['codigo', 'nombre', 'precioVentaText'];
-const columnTypes = [
-  ColumnTypes.string,
-  ColumnTypes.string,
-  ColumnTypes.string,
-  ColumnTypes.numeric
-];
+const columns = ['Concepto', 'Precio Venta'];
+const keys = ['codigo', 'precioVentaText'];
+const columnTypes = [ColumnTypes.string, ColumnTypes.numeric];
 const searchHint = 'Buscar productos...';
 
 export default class ProductosListView extends React.Component {

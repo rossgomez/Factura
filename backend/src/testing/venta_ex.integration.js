@@ -64,7 +64,7 @@ describe('/venta_ex/ endpoints', () => {
       api.insertarProducto({
         codigo: 'rytertg663433g',
         nombre: 'examen',
-        marca: 'TECO',
+        //marca: 'TECO',
         precioDist: 0,
         precioVenta: 199900,
         pagaIva: false

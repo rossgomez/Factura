@@ -50,7 +50,7 @@ describe('/producto/ endpoints', () => {
         api.insertarProducto({
           codigo: 'rytertg663433g',
           nombre: 'TGO 8x50',
-          marca: 'TECO',
+          //marca: 'TECO',
           precioDist: 399900,
           precioVenta: 499900,
           pagaIva: true
@@ -58,7 +58,7 @@ describe('/producto/ endpoints', () => {
         api.insertarProducto({
           codigo: 'rytertg663433g',
           nombre: 'TGP 8x50',
-          marca: 'TECO',
+         // marca: 'TECO',
           precioDist: 399900,
           precioVenta: 499900,
           pagaIva: true
@@ -88,7 +88,7 @@ describe('/producto/ endpoints', () => {
           rowid: expect.any(Number),
           codigo: 'rytertg663433g',
           nombre: 'TGO 8x50',
-          marca: 'TECO',
+          //marca: 'TECO',
           precioDist: 399900,
           precioVenta: 499900,
           pagaIva: 1
@@ -126,7 +126,7 @@ describe('/producto/ endpoints', () => {
         rowid: productoId,
         codigo: 'ryt126s4',
         nombre: 'HCG',
-        marca: 'TECO',
+      //  marca: 'TECO',
         precioDist: 399900,
         precioVenta: 599900,
         pagaIva: true
@@ -140,7 +140,7 @@ describe('/producto/ endpoints', () => {
           rowid: 889,
           codigo: 'ryt126s4',
           nombre: 'HCG',
-          marca: 'TECO',
+          //marca: 'TECO',
           precioDist: 399900,
           precioVenta: 599900,
           pagaIva: true
@@ -155,7 +155,7 @@ describe('/producto/ endpoints', () => {
       const res = await api.insertarProducto({
         codigo: 'ryt126s4',
         nombre: 'HCG Tirilla',
-        marca: 'TECO',
+        //marca: 'TECO',
         precioDist: 399900,
         precioVenta: 499900,
         pagaIva: true

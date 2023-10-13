@@ -134,7 +134,7 @@ describe('/venta/ endpoints', () => {
       api.insertarProducto({
         codigo: 'AD-12-21',
         nombre: 'Glyco',
-        marca: 'TECO',
+       // marca: 'TECO',
         precioDist: 399900,
         precioVenta: 499900,
         pagaIva: true

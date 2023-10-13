@@ -7,7 +7,7 @@ const crearTablaProductos = table => {
   table.string('codigo', 10);
   table.string('nombreAscii', 50);
   table.string('nombre', 50);
-  table.string('marca', 30);
+  //table.string('marca', 30);
   table.integer('precioDist');
   table.integer('precioVenta');
   table.boolean('pagaIva');

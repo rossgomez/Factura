@@ -14,8 +14,8 @@ describe('Productos ListView State', () => {
   const insertarProductosDePrebaTest = () => {
     const resp = {
       body: [
-        { rowid: 1, precioVenta: 199900, marca: 'TECO' },
-        { rowid: 2, precioVenta: 199900, marca: 'TECO' }
+        // { rowid: 1, precioVenta: 199900, marca: 'TECO' },
+        // { rowid: 2, precioVenta: 199900, marca: 'TECO' }
       ]
     };
     stateManager.colocarProductosDelResponse(resp);
@@ -23,8 +23,8 @@ describe('Productos ListView State', () => {
       {
         rowid: 1,
         precioVenta: 199900,
-        precioVentaText: '19.99',
-        marca: 'TECO'
+        precioVentaText: '19.99'
+        //marca: 'TECO'
       },
       { rowid: 2, precioVenta: 199900, precioVentaText: '19.99', marca: 'TECO' }
     ]);
@@ -54,7 +54,7 @@ describe('Productos ListView State', () => {
       expect(state.rows).toEqual([
         {
           rowid: 2,
-          marca: 'TECO',
+          //marca: 'TECO',
           precioVenta: 199900,
           precioVentaText: '19.99'
         }

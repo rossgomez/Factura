@@ -164,7 +164,7 @@ const getUnidadesFromVenta = ventaId => {
       'unidades.precioVenta',
       'productos.codigo',
       'productos.pagaIva',
-      'productosFts.marca',
+      //'productosFts.marca',
       'unidades.lote',
       'unidades.fechaExp'
     )
@@ -252,27 +252,28 @@ const findProductos = ({ pagaIva, queryString, limit }) => {
   const baseQuery = knex
     .select([
       'rowid',
-      'nombre',
-      'marca',
+      //'nombre',
+      //'marca',
       'precioVenta',
       'precioDist',
-      'codigo',
-      'pagaIva'
+      'codigo'
+      //'pagaIva'
     ])
     .from('productos')
-    .join('productosFts', { 'productos.ftsid': 'productosFts.rowid' })
+    //.join('productosFts', { 'productos.ftsid': 'productosFts.rowid' })
     .limit(limit);
-
+    
   if (queryString) {
     if (typeof pagaIva === 'number')
       return baseQuery
-        .where('productosFts.nombre', 'MATCH', queryString + '*')
+        //.where('productosFts.nombre', 'MATCH', queryString + '*')
         .where({ pagaIva });
 
-    return baseQuery.where('productosFts.nombre', 'MATCH', queryString + '*');
-  }
+   // return baseQuery.where('productosFts.nombre', 'MATCH', queryString + '*');
+    return baseQuery;
 
-  if (typeof pagaIva === 'number') return baseQuery.where({ pagaIva });
+  }
+  //if (typeof pagaIva === 'number') return baseQuery.where({ pagaIva });
 
   return baseQuery;
 };
@@ -315,16 +316,18 @@ const ventaExiste = async rowid => {
 
 const insertarProducto = params =>
   knex.transaction(async trx => {
-    const { nombre, marca, ...producto } = params;
-    const [ftsid] = await trx.table('productosFts').insert({ nombre, marca });
+    //const { nombre, marca, ...producto } = params;
+    const { nombre,  ...producto } = params;
+   // const [ftsid] = await trx.table('productosFts').insert({ nombre,  });
     return trx
       .table('productos')
-      .insert({ ...producto, ftsid, nombreUnique: nombre });
+      .insert({ ...producto, nombreUnique: nombre });
   });
 
 const updateProducto = params =>
   knex.transaction(async trx => {
-    const { nombre, marca, ...producto } = params;
+    //const { nombre, marca, ...producto } = params;
+    const { nombre,  ...producto } = params;
     const [oldRecord] = await trx
       .select('ftsid')
       .table('productos')
@@ -334,7 +337,8 @@ const updateProducto = params =>
     await trx
       .table('productosFts')
       .where({ rowid: oldRecord.ftsid })
-      .update({ nombre, marca });
+      //.update({ nombre, marca });
+      .update({ nombre });
     return trx
       .table('productos')
       .where({ rowid: params.rowid })

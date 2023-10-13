@@ -64,7 +64,7 @@ describe('/cliente/ endpoints', () => {
         id: '0931816898001',
         nombre: 'Xavier Jaramillo',
         direccion: 'Pedro Carbo y Sucre',
-        email: 'xjaramillo@gmail.com',
+        //email: 'xjaramillo@gmail.com',
         telefono1: '2854345',
         telefono2: '28654768',
         descDefault: '5',

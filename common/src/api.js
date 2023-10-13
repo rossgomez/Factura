@@ -68,7 +68,7 @@ module.exports = {
         pagaIva ? 1 : 0
       }&queryString=${queryString}`;
     }
-
+  
     return request.get(prefix + path).send();
   },
 

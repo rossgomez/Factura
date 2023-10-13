@@ -47,8 +47,9 @@ const productoAFacturable = producto => {
   };
 };
 
+//const { pagaIva, nombre, codigo, marca,  ...unidad } = facturable;
 const facturableAUnidad = facturable => {
-  const { pagaIva, nombre, codigo, marca, ...unidad } = facturable;
+  const { pagaIva, nombre, codigo,  ...unidad } = facturable;
   return unidad;
 };
 
