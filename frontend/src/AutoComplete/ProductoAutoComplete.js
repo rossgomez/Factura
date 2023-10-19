@@ -19,7 +19,7 @@ export default class ProductoAutoComplete extends React.Component {
 
     return (
       <AutoCompleteComponent
-        hintText="Producto"
+        hintText="Concepto"
         dataSourceConfig={dataSourceConfig}
         newDataPromise={newDataPromise}
         onNewItemSelected={this.props.onNewItemSelected}

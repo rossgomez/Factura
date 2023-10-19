@@ -34,7 +34,7 @@ const mostrarInputDialog = ({ Content, editar, ...extras }) => state => {
           Content,
           editar,
           open: true,
-          title: editar ? 'Editar Producto' : 'Nuevo Producto'
+          title: editar ? 'Editar Concepto' : 'Nuevo Concepto'
         }
       };
     case MedicoForm:

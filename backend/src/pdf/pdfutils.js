@@ -50,14 +50,14 @@ const crearMatrizValoresTotales = ({ subtotal, flete, iva, descuento }) => {
   );
 
   const matrix = [];
-  matrix.push(['Sub-Total', '$', Money.print(subtotal)]);
-  matrix.push(['Descuento', `${descuento}%`, Money.print(rebaja)]);
-  if (iva === 0) matrix.push(['IVA', '0%', '0.00']);
+  matrix.push(['Exento', '$', Money.print(subtotal)]);
+  //matrix.push(['Descuento', `${descuento}%`, Money.print(rebaja)]);
+  if (iva === 0) matrix.push(['IVA', '0%', '0']);
+  else matrix.push(['IVA', '5%', '0']); //Exento
+  //matrix.push(['Flete', '$', Money.print(flete)]);
+  if (iva > 0) matrix.push(['IVA', `10%`, '0']);
   else matrix.push(['IVA', '%', '']);
-  matrix.push(['Flete', '$', Money.print(flete)]);
-  if (iva > 0) matrix.push(['IVA', `${iva}%`, Money.print(impuestos)]);
-  else matrix.push(['IVA', '%', '']);
-  matrix.push(['Total US', '$', Money.print(total)]);
+  matrix.push(['Total Gs', '', Money.print(total)]);
   return matrix;
 };
 

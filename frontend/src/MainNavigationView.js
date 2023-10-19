@@ -63,12 +63,12 @@ const MainDrawer = withRouter(props => {
         leftIcon={<Add />}
       >
         Factura
-      </MenuItem>
+        {/* </MenuItem>
       <MenuItem
         onTouchTap={() => redirectAndClose('/factura_examen/edit/new')}
         leftIcon={<Add />}
       >
-        Factura Examen
+        Factura Examen */}
       </MenuItem>
       <Divider />
       <MenuItem
@@ -81,7 +81,7 @@ const MainDrawer = withRouter(props => {
         onTouchTap={() => redirectAndClose('/productos')}
         leftIcon={<ViewList />}
       >
-        Productos
+        Conceptos
       </MenuItem>
       <MenuItem
         onTouchTap={() => redirectAndClose('/facturas')}
@@ -211,17 +211,17 @@ class MainToolbar extends Component {
             anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
           >
             <MenuItem
-              primaryText="Nuevo Producto"
+              primaryText="Nuevo Concepto"
               onTouchTap={() => mostrarNuevoItemDialog(ProductoForm)}
             />
             <MenuItem
               primaryText="Nuevo Cliente"
               onTouchTap={() => mostrarNuevoItemDialog(ClienteForm)}
             />
-            <MenuItem
+            {/* <MenuItem
               primaryText="Nuevo Medico"
               onTouchTap={() => mostrarNuevoItemDialog(MedicoForm)}
-            />
+            /> */}
           </IconMenu>
           <IconMenu
             iconButtonElement={

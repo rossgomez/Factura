@@ -41,7 +41,7 @@ export const getDefaultState = () => ({
 const findValidacionErrors = (config, state) => {
   if (!state.clienteRow) return 'Por favor ingresa un cliente.';
 
-  if (state.unidades.length === 0) return 'Por favor ingresa un producto.';
+  if (state.unidades.length === 0) return 'Por favor ingresa un Concepto.';
 
   if (config.isExamen && !state.inputs.paciente)
     return 'Por favor ingresa un paciente.';

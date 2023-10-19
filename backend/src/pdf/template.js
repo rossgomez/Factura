@@ -59,12 +59,14 @@ const drawInvoiceInfoContents = (doc, { ventaRow, clienteRow }) => {
   doc.fontSize(11);
   doc.lineGap(3);
   doc
+    .text('Comprobante: ')
     .text('Ypacarai: ', topTableStart.x, topTableStart.y)
     .text('Nombre: ')
     .text('Dirección: ')
     .text('Teléfono: ');
 
   doc
+    
     .text(fecha, tableContentRowPos, topTableStart.y)
     .text(nombre)
     .text(direccion);
@@ -284,9 +286,9 @@ module.exports = ({ ventaRow, unidades, pagos, clienteRow }) => {
       unidades,
       detallado
     );
-    drawTotalPalabras(doc, 'SON: ' + valorPalabras(Money.print(total)));
+    /* drawTotalPalabras(doc, 'SON: ' + valorPalabras(Money.print(total)));*/
     drawTotalValues(doc, ventaRow);
-    drawPaymentMethodFooter(doc, pagos, empresaName);
+    drawPaymentMethodFooter(doc, pagos, empresaName); 
 
     if (remainingFacturablesIndex) {
       drawRemainingFacturablesOnNextPage(

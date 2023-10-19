@@ -50,7 +50,7 @@ describe('Factura ListView State', () => {
             descuento: 0
           },
           {
-            comprobante: '-',
+            comprobante: '000000022',
             empresa: 'TECO',
             fecha: '2019-07-04T06:32:19.983Z',
             fechaText: '2019-07-04 01:32',

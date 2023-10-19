@@ -84,7 +84,7 @@ const FacturaOptions = props => {
   );
   const detalladoCheckbox = (
     <Checkbox
-      label={'Mostrar Información detallada en cada producto'}
+      label={'Mostrar Información detallada en cada Concepto'}
       style={{ textAlign: 'left' }}
       checked={isExamen ? false : detallado}
       disabled={isExamen}

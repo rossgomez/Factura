@@ -22,9 +22,7 @@ const RenderTableHeader = props => {
     </TableHeaderColumn>
   );
   let loteCol = (
-    <TableHeaderColumn width={60} style={noPaddingStyle}>
-      Lote
-    </TableHeaderColumn>
+    <TableHeaderColumn width={60} style={noPaddingStyle}></TableHeaderColumn>
   );
   let fechaExpCol = (
     <TableHeaderColumn width={70} style={noPaddingStyle}>

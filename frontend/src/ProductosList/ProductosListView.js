@@ -8,7 +8,7 @@ const ColumnTypes = MaterialTable.ColumnTypes;
 const columns = ['Concepto', 'Precio Venta'];
 const keys = ['codigo', 'precioVentaText'];
 const columnTypes = [ColumnTypes.string, ColumnTypes.numeric];
-const searchHint = 'Buscar productos...';
+const searchHint = 'Buscar Conceptos...';
 
 export default class ProductosListView extends React.Component {
   constructor(props) {
