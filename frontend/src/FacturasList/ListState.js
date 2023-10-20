@@ -7,7 +7,7 @@ import leftPad from 'left-pad';
 import { calcularTotalVentaRow } from 'facturacion_common/src/Math.js';
 
 const getComprobanteFromVenta = venta => {
-  if (!venta.secuencial) return '1';
+  if (!venta.secuencial) return '-';
 
   if (!venta.id) return 'Pendiente';
 

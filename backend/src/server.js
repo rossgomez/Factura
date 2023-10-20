@@ -300,9 +300,11 @@ const handleValidData = fn => async (req, res) => {
 
 const generarNuevoComprobante = async ventaId => {
   const venta = await db.getVentaById(ventaId);
-  const { id, clave_acceso, datilMsg } = await Datil.emitirFactura(venta);
+  //const { id, clave_acceso, datilMsg } = await Datil.emitirFactura(venta);
 
-  if (datilMsg) return { status: 520, resp: { rowid: ventaId, datilMsg } };
+  //if (datilMsg) return { status: 520, resp: { rowid: ventaId, datilMsg } };
+  clave_acceso= 0
+  id= ventaId
 
   await db.colocarComprobante({ ventaId, id, clave_acceso });
 

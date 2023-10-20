@@ -59,8 +59,8 @@ const drawInvoiceInfoContents = (doc, { ventaRow, clienteRow }) => {
   doc.fontSize(11);
   doc.lineGap(3);
   doc
-    .text('Comprobante: ')
-    .text('Ypacarai: ', topTableStart.x, topTableStart.y)
+    .text('Comprobante: ', topTableStart.x, topTableStart.y)
+    .text('Ypacarai: ')
     .text('Nombre: ')
     .text('Dirección: ')
     .text('Teléfono: ');

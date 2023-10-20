@@ -17,16 +17,24 @@ const errorMsgStyle = {
 };
 
 const ResultsTable = props => {
+  /*
   const { isExamen, porcentajeIVA } = props;
   const subtotal = Money.print(props.subtotal);
   const rebaja = Money.print(props.rebaja);
   const impuestos = Money.print(props.impuestos);
   const total = Money.print(props.total);
+  */
+
+  const { isExamen, porcentajeIVA } = props;
+  const subtotal = Money.print(props.subtotal);
+  const rebaja = 0;
+  const impuestos = 0;
+  const total = Money.print(props.total);
 
   const ivaRow = isExamen ? null : (
     <tr>
       <td>
-        <strong>{ivaLabel(porcentajeIVA)}</strong>
+        <strong>IVA 5%: ₲</strong>
       </td>
       <td>{impuestos}</td>
     </tr>
@@ -39,20 +47,20 @@ const ResultsTable = props => {
         <tbody>
           <tr>
             <td>
-              <strong>Subtotal: $</strong>
+              <strong>Exetas: ₲</strong>
             </td>
             <td style={{ paddingLeft: '20px' }}>{subtotal}</td>
           </tr>
           {ivaRow}
           <tr>
             <td>
-              <strong>Descuento: $</strong>
+              <strong>IVA 10%: ₲</strong>
             </td>
             <td>{rebaja}</td>
           </tr>
           <tr>
             <td>
-              <strong>Total: $</strong>
+              <strong>Total: ₲</strong>
             </td>
             <td>{total}</td>
           </tr>
@@ -73,7 +81,7 @@ const FacturaOptions = props => {
 
   const contableCheckbox = (
     <Checkbox
-      label={'Generar comprobante electrónico'}
+      label={'Generar comprobante'}
       style={{ textAlign: 'left' }}
       checked={contable}
       disabled={contableDisabled}

@@ -1,4 +1,4 @@
-const PRECISION = 10000;
+ const PRECISION = 1;
 
 const fromString = s => {
   if (s === '') return 0;
@@ -14,4 +14,6 @@ module.exports = {
   fromString,
   print,
   printFloat
-};
+};   
+
+
