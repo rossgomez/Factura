@@ -42,34 +42,44 @@ const unitPriceColumnSeparator =
   descriptionColumnSeparator + unitPriceColumnWidth;
 
 const paymentAgreementString = empresaName =>
-  'Declaro expresamente haver recibido la mercadería' +
-  ' y/o servicio detallado en esta factura y me comprometo a pagar integramente' +
+'Asociación de Pensionados y Jubilados' +
+' del Instituto de Previsión Social' +
+' I.P.S. - Ypacaraí' ;
+  /* ' y/o servicio detallado en esta factura y me comprometo a pagar integramente' +
   ` el valor total de la misma a ${empresaName}, en el plazo establecido en caso` +
   ' de mora en el pago de la factura me comprometo a pagar el interés legal por' +
   ' mora y comisiones por cobranza, desde el vencimiento hasta el mismo día de' +
   ' pago. Para toda acción legal, renuncio a domicilio y me someto a los jueces' +
-  ' de esta jurisdicción o al que elija el acreedor.';
+  ' de esta jurisdicción o al que elija el acreedor.' */
 
-const drawInvoiceInfoContents = (doc, { ventaRow, clienteRow }) => {
+const drawInvoiceInfoContents = (doc, { ventaRow, clienteRow, comprobanteRow}) => {
   const { nombre, telefono1, direccion, id } = clienteRow;
   const { fecha } = ventaRow;
+  const { secuencial } = comprobanteRow;
 
   const topTableStart = { x: BOX1_POS.x + 8, y: BOX1_POS.y + 16 };
   const tableContentRowPos = 95;
   doc.fontSize(11);
   doc.lineGap(3);
   doc
-    .text('Comprobante: ', topTableStart.x, topTableStart.y)
-    .text('Ypacarai: ')
-    .text('Nombre: ')
-    .text('Dirección: ')
-    .text('Teléfono: ');
+  .text('Asociación de Pensionados y Jubilados' +
+  ' del Instituto de Previsión Social' +
+  ' I.P.S. - Ypacaraí'  )
+  .text('Timbrado: 123456' )
+  .text('Comprobante: ')
+  .text('Fecha de emision: ', topTableStart.x, topTableStart.y)
+  .text('Nombre: ')
+  .text('Dirección: ')
+  .text('Teléfono: ')
+  .text('Comprobante: ');
 
-  doc
-    
-    .text(fecha, tableContentRowPos, topTableStart.y)
-    .text(nombre)
-    .text(direccion);
+doc
+  
+  .text(fecha, tableContentRowPos+70, topTableStart.y)
+  .text(nombre)
+  .text(direccion)
+  
+  
 
   const RUCTitleLeftMargin = 240;
   const RUCLeftMargin = 275;
@@ -77,8 +87,10 @@ const drawInvoiceInfoContents = (doc, { ventaRow, clienteRow }) => {
 
   doc
     .text(telefono1, doc.x, RUCPhoneLinePos)
+    .text(secuencial)
     .text('RUC: ', RUCTitleLeftMargin, RUCPhoneLinePos)
     .text(id, RUCLeftMargin, RUCPhoneLinePos);
+    
   doc.lineGap(0); //restore default
 };
 
@@ -269,7 +281,8 @@ const drawPaymentMethodFooter = (doc, pagos, empresaName) => {
   doc.fontSize(12); //restore default
 };
 
-module.exports = ({ ventaRow, unidades, pagos, clienteRow }) => {
+
+module.exports = ({ ventaRow, unidades, pagos, clienteRow, comprobanteRow }) => {
   const writeFunc = doc => {
     const { detallado } = ventaRow;
     const { total } = calcularValoresTotales(
@@ -280,7 +293,7 @@ module.exports = ({ ventaRow, unidades, pagos, clienteRow }) => {
     );
     const empresaName = ventaRow.empresa.toUpperCase();
 
-    drawInvoiceInfoContents(doc, { ventaRow, clienteRow, unidades });
+    drawInvoiceInfoContents(doc, { ventaRow, clienteRow, unidades, comprobanteRow });
     const remainingFacturablesIndex = drawFacturablesDetails(
       doc,
       unidades,
