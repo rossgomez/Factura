@@ -60,8 +60,25 @@ app.post('/cliente/new', validarCliente, (req, res) => {
   );
 });
 
+function esNumero(valor) {
+  return !isNaN(parseFloat(valor)) && isFinite(valor);
+}
+
 app.get('/cliente/find', (req, res) => {
-  const q = req.query.q || '';
+   // Verificar si el queryString es un número
+   var q = null;
+   if (esNumero(req.query.q)) {
+    // Si es un número, puedes cargar una variable de número
+     q = parseInt(req.query.q);
+
+  } else {
+    // Si no es un número, puedes cargar una variable de cadena
+    //const cadena = queryString;
+    q = req.query.q || '';
+   
+  }
+
+  //const q = req.query.q || '';
   db.findClientes(q).then(
     function(clientes) {
       if (clientes.length === 0)

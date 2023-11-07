@@ -248,6 +248,18 @@ const buscarEnTabla = (tabla, columna, queryString, limit) => {
   return query;
 };
 
+const buscarEnTablacliente = (tabla, columna1, columna2, queryString, limit) => {
+  const limitValue = limit || 5;
+  const query = knex
+    .select('*')
+    .from(tabla)
+    .limit(limitValue);
+  if (queryString !== '')
+    return query.where(columna1, 'like', `%${queryString}%`)
+                .orWhere(columna2, 'like', `%${queryString}%`);    
+  return query;
+};
+
 const findProductos = ({ pagaIva, queryString, limit }) => {
   const baseQuery = knex
     .select([
@@ -345,6 +357,12 @@ const updateProducto = params =>
       .update({ ...producto, nombreUnique: nombre });
   });
 
+  // Función para verificar si un valor es un número
+function esNumero(valor) {
+  return !isNaN(parseFloat(valor)) && isFinite(valor);
+}
+
+
 module.exports = {
   close: () => {
     knex.destroy();
@@ -359,9 +377,31 @@ module.exports = {
     return rowid;
   },
 
+
   findClientes: queryString => {
-    const queryStringAscii = convertToAscii(queryString);
-    return buscarEnTabla('clientes', 'nombreAscii', queryStringAscii);
+        // Verificar si el queryString es un número
+        if (esNumero(queryString)) {
+          // Si es un número, puedes cargar una variable de número
+          const numero = parseInt(queryString);
+          return buscarEnTablacliente('clientes', 'nombreAscii','id', numero);
+          //console.log("Es un número:", numero);
+        } else {
+          // Si no es un número, puedes cargar una variable de cadena
+          const cadena = queryString;
+          const queryStringAscii = convertToAscii(queryString)
+          //console.log("Es una cadena:", cadena);
+          return buscarEnTablacliente('clientes', 'nombreAscii','id', queryStringAscii);
+        }
+
+
+    //const queryStringAscii = convertToAscii(queryString);
+
+   // const queryStringAscii = 442928;
+
+    
+
+    //buscarEnTablacliente
+    //return buscarEnTabla('clientes', 'nombreAscii', queryStringAscii);
   },
 
   insertarMedico: medico => {
