@@ -246,7 +246,8 @@ const verVentaPDF = (req, res) => {
   db.getVentaById(id)
     .then(resp => {
       const writeFunc = facturaTemplate(resp);
-      return new PDFWriter(facturaDir + facturaFileName, writeFunc);
+     
+      return new PDFWriter(facturaDir + facturaFileName, writeFunc,110+((resp.unidades.length-1)*4.2));
     })
     .then(() => {
       fs.readFile(facturaDir + facturaFileName, function(err, data) {

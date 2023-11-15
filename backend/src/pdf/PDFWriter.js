@@ -2,19 +2,32 @@ const PDFDocument = require('pdfkit');
 const fs = require('fs');
 
 class PDFWriter {
-  constructor(filepath, writeFunc) {
+  constructor(filepath, writeFunc, largo) {
     this.filepath = filepath;
     this.writeFunc = writeFunc;
+    // Dimensiones en milímetros
+    const anchoMm = 58;
+    //const largoMmm = this.writeFunc;
+    const largoMm = largo;
+
+
+    // Conversión a pulgadas
+    const anchoPulgadas = anchoMm / 25.4;
+    const largoPulgadas = largoMm / 25.4;
     const doc = new PDFDocument({
-      size: 'A4',
+      
+      size: [anchoPulgadas * 72, largoPulgadas * 72],
       margins: {
-        top: 10,
-        left: 10,
-        bottom: 10,
-        right: 10
+        top: 5,
+        left: 2,
+        bottom: 2,
+        right: 2
       }
-    });
+    }); 
+
+
     this.doc = doc;
+    
   }
 
   then(res, rej) {
