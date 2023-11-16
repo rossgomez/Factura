@@ -249,7 +249,7 @@ const buscarEnTabla = (tabla, columna, queryString, limit) => {
 };
 
 const buscarEnTablacliente = (tabla, columna1, columna2, queryString, limit) => {
-  const limitValue = limit || 5;
+  const limitValue = limit || 1000;
   const query = knex
     .select('*')
     .from(tabla)
