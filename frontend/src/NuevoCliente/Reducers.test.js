@@ -7,8 +7,8 @@ import { getDefaultState, createReducer } from './Reducers.js';
 import { assertWithSchema, runActions } from '../TestingUtils.js';
 import API from 'facturacion_common/src/api.js';
 
-describe('Nuevo cliente reducers', () => {
-  it('puede crear un nuevo cliente', async () => {
+describe('Nuevo socio reducers', () => {
+  it('puede crear un nuevo socio', async () => {
     const cerrarDialog = jest.fn();
     API.insertarCliente.mockReturnValueOnce(Promise.resolve());
 
@@ -49,7 +49,7 @@ describe('Nuevo cliente reducers', () => {
     });
   });
 
-  it('puede editar cliente existente', async () => {
+  it('puede editar socio existente', async () => {
     const cerrarDialog = jest.fn();
     API.updateCliente.mockReturnValueOnce(Promise.resolve());
 

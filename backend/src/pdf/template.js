@@ -143,7 +143,7 @@ const drawLineFooter = (doc) => {
   doc.x = startX;
   doc.y = doc.y;
   doc.text('-----------------------------------------------------------');
-  doc.text('ORIGINAL CLIENTE', 38,doc.y+3);
+  doc.text('ORIGINAL SOCIO', 38,doc.y+3);
 
   doc.fontSize(12); //restore default
 };

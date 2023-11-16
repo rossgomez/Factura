@@ -26,8 +26,8 @@ export default class DialogState {
   }
 
   getMensajeExito(nombre) {
-    if (this.props.editar) return `Cliente actualizado: ${nombre}`;
-    return `Nuevo cliente guardado: ${nombre}`;
+    if (this.props.editar) return `Socio actualizado: ${nombre}`;
+    return `Nuevo socio guardado: ${nombre}`;
   }
 
   cerrarDialogConExito(nombre) {

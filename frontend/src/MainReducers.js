@@ -7,7 +7,7 @@ import PagosForm from './Pagos/PagosForm.js';
 export const getDefaultState = () => ({
   dialog: {
     Content: ClienteForm,
-    title: 'Nuevo Cliente',
+    title: 'Nuevo Socio',
     editar: null,
     open: false
   },
@@ -24,7 +24,7 @@ const mostrarInputDialog = ({ Content, editar, ...extras }) => state => {
           Content,
           editar,
           open: true,
-          title: editar ? 'Editar Cliente' : 'Nuevo Cliente'
+          title: editar ? 'Editar Socio' : 'Nuevo Socio'
         }
       };
     case ProductoForm:

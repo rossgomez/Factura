@@ -96,11 +96,11 @@ describe('Cliente Dialog State', () => {
     it('obtiene el mensaje de exito a mostrar segun el valor de editar en props', () => {
       stateManager = new DialogState({ editar: {} }, setStateFunc);
       const editarMsg = stateManager.getMensajeExito('test');
-      expect(editarMsg).toEqual('Cliente actualizado: test');
+      expect(editarMsg).toEqual('Socio actualizado: test');
 
       stateManager.props.editar = null;
       const insertarMsg = stateManager.getMensajeExito('test');
-      expect(insertarMsg).toEqual('Nuevo cliente guardado: test');
+      expect(insertarMsg).toEqual('Nuevo socio guardado: test');
     });
   });
 

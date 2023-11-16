@@ -53,7 +53,7 @@ export default class NuevoClienteForm extends React.Component {
     };
 
     const clienteInput = {
-      hintText: 'Cliente',
+      hintText: 'Socio',
       icon: Person,
       value: inputs.nombre || '',
       errorText: errors.nombre,

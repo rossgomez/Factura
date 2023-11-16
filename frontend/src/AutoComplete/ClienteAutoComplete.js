@@ -12,7 +12,7 @@ export default class ClienteAutoComplete extends React.Component {
   render() {
     return (
       <AutoCompleteComponent
-        hintText="Cliente"
+        hintText="Socio"
         style={{ marginRight: '36px' }}
         openOnFocus={false}
         dataSourceConfig={dataSourceConfig}

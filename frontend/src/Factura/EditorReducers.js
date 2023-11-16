@@ -39,7 +39,7 @@ export const getDefaultState = () => ({
 });
 
 const findValidacionErrors = (config, state) => {
-  if (!state.clienteRow) return 'Por favor ingresa un cliente.';
+  if (!state.clienteRow) return 'Por favor ingresa un socio.';
 
   if (state.unidades.length === 0) return 'Por favor ingresa un Concepto.';
 

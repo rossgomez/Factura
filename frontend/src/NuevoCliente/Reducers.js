@@ -75,8 +75,8 @@ const upload = (cliente, callback) => {
     .then(() => {
       callback(
         editing
-          ? `Cliente editado: ${cliente.nombre}`
-          : `Cliente creado: ${cliente.nombre}`
+          ? `Socio editado: ${cliente.nombre}`
+          : `Socio creado: ${cliente.nombre}`
       );
       return { type: Actions.getDefaultState };
     })

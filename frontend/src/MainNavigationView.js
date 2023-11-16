@@ -75,7 +75,7 @@ const MainDrawer = withRouter(props => {
         onTouchTap={() => redirectAndClose('/clientes')}
         leftIcon={<ViewList />}
       >
-        Clientes
+        Socios
       </MenuItem>
       <MenuItem
         onTouchTap={() => redirectAndClose('/productos')}
@@ -215,7 +215,7 @@ class MainToolbar extends Component {
               onTouchTap={() => mostrarNuevoItemDialog(ProductoForm)}
             />
             <MenuItem
-              primaryText="Nuevo Cliente"
+              primaryText="Nuevo Socio"
               onTouchTap={() => mostrarNuevoItemDialog(ClienteForm)}
             />
             {/* <MenuItem
