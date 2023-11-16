@@ -297,11 +297,11 @@ const numericString = ({ fallback, abrv, len, minLen, maxLen } = {}) => (
       ? new Error(`Inválido`)
       : new Error(`"${ctx.name}" debe de tener más de ${min} caracteres.`);
 
-  if (!validator.isNumeric(value))
+ /*  if (!validator.isNumeric(value))
     return abrv
       ? new Error(`Inválido`)
       : new Error(`"${ctx.name}" debe de ser una cadena de dígitos`);
-
+ */
   return value;
 };
 

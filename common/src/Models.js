@@ -19,7 +19,7 @@ const FormasDePago = deepFreeze({
 const TiposID = deepFreeze({
   ruc: 'RUC',
   cedula: 'CEDULA',
-  consumidor_final: 'CONSUMIDOR FINAL'
+  //consumidor_final: 'CONSUMIDOR FINAL'
 });
 
 const crearUnidadesRows = facturables =>
