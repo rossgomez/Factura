@@ -94,6 +94,38 @@ app.get('/cliente/find', (req, res) => {
   );
 });
 
+
+
+app.get('/cliente-factura/find', (req, res) => {
+  // Verificar si el queryString es un número
+  var q = null;
+  if (esNumero(req.query.q)) {
+   // Si es un número, puedes cargar una variable de número
+    q = parseInt(req.query.q);
+
+ } else {
+   // Si no es un número, puedes cargar una variable de cadena
+   //const cadena = queryString;
+   q = req.query.q || '';
+  
+ }
+
+ //const q = req.query.q || '';
+ db.findClientesFactura(q).then(
+   function(clientes) {
+     if (clientes.length === 0)
+       res
+         .status(404)
+         .send('No existen clientes con esa cadena de caracteres');
+     else res.status(200).send(clientes);
+   },
+   function(err) {
+     //ERROR!
+     res.status(500).send(err);
+   }
+ );
+});
+
 app.post('/cliente/update', validarClienteUpdate, (req, res) => {
   const handleSuccess = function(updateCount) {
     if (updateCount === 0) res.status(404).send('Cliente no encontrado');

@@ -25,6 +25,9 @@ module.exports = {
   findClientes: queryString => {
     return request.get(prefix + '/cliente/find?q=' + queryString).send();
   },
+  findClientesFactura: queryString => {
+    return request.get(prefix + '/cliente-factura/find?q=' + queryString).send();
+  },
 
   deleteCliente: (tipo, id) => {
     return request.post(prefix + `/cliente/delete/${tipo}/${id}`).send();

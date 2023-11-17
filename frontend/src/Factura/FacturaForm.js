@@ -28,7 +28,7 @@ const ClienteInput = props => {
   if (cliente)
     return (
       <CloseableColorChip
-        text={cliente.nombre}
+        text={cliente.nombreApellido}
         width={width}
         icon={Person}
         onRequestDelete={() => onNewCliente(null)}

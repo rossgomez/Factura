@@ -4,7 +4,7 @@ import { findClientes, deleteCliente } from 'facturacion_common/src/api';
 import MaterialTable from '../lib/MaterialTable';
 import ListState from './ListState';
 
-const columns = ['#Cedula/RUC', 'Nombre', 'Apellido', 'E-mail', 'Teléfono 1'];
+const columns = ['#Cedula/RUC', 'Nombre', 'Apellido', 'E-mail', 'Teléfono'];
 const keys = ['id', 'nombre', 'apellido', 'email', 'telefono1'];
 const searchHint = 'Buscar socio...';
 

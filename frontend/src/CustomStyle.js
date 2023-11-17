@@ -1,5 +1,5 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { greenAporte, pink300 } from 'material-ui/styles/colors';
+import { greenA700, pink300 } from 'material-ui/styles/colors';
 
 export const myTheme = color =>
   getMuiTheme({
@@ -9,6 +9,6 @@ export const myTheme = color =>
   });
 
 export const getEmpresaTheme = main => {
-  const color = main ? greenAporte : pink300;
+  const color = main ? greenA700 : pink300;
   return myTheme(color);
 };

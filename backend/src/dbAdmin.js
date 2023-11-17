@@ -145,8 +145,8 @@ const findAllVentas = (empresa, nombreCliente) => {
     .leftOuterJoin('comprobantes', { 'ventas.rowid': 'comprobantes.ventaId' })
     .where('nombreAscii', 'like', `%${nombreClienteAscii}%`)
     .where('empresa', empresa)
-    .orderBy('fecha', 'desc')
-    .limit(50);
+    .orderBy('apellido', 'asc');
+    
 };
 
 const getCliente = rowid => {
@@ -154,6 +154,7 @@ const getCliente = rowid => {
     .select('*')
     .from('clientes')
     .where({ rowid });
+    
 };
 
 const getUnidadesFromVenta = ventaId => {
@@ -249,15 +250,50 @@ const buscarEnTabla = (tabla, columna, queryString, limit) => {
   return query;
 };
 
-const buscarEnTablacliente = (tabla, columna1, columna2, queryString, limit) => {
+const buscarEnTablacliente = (tabla, columna1, columna2, columna3, queryString, limit) => {
   const limitValue = limit || 1000;
   const query = knex
     .select('*')
     .from(tabla)
-    .limit(limitValue);
+    .limit(limitValue)
+    .orderBy('apellido', 'asc');
+
   if (queryString !== '')
     return query.where(columna1, 'like', `%${queryString}%`)
-                .orWhere(columna2, 'like', `%${queryString}%`);    
+                .orWhere(columna2, 'like', `%${queryString}%`)  
+                .orWhere(columna3, 'like', `%${queryString}%`);  
+                
+  return query;
+};
+
+
+const buscarEnTablaclienteFactura = (tabla, columna1, columna2, columna3, queryString, limit) => {
+  const limitValue = limit || 1000;
+  const query = knex
+    .select([
+      'rowid',
+      'id',
+      'nombreAscii',
+      'nombre',
+      'direccion',
+      'email',
+      'telefono1',
+      'telefono2',
+      'descDefault',
+      'tipo',
+      'apellido',
+      'apellidoAscii',
+      knex.raw('nombre || " " || apellido as nombreApellido')
+    ])
+    .from(tabla)
+    .limit(limitValue)
+    .orderBy('apellido', 'asc');
+
+  if (queryString !== '')
+    return query.where(columna1, 'like', `%${queryString}%`)
+                .orWhere(columna2, 'like', `%${queryString}%`)  
+                .orWhere(columna3, 'like', `%${queryString}%`);  
+                
   return query;
 };
 
@@ -384,14 +420,17 @@ module.exports = {
         if (esNumero(queryString)) {
           // Si es un número, puedes cargar una variable de número
           const numero = parseInt(queryString);
-          return buscarEnTablacliente('clientes', 'nombreAscii','id', numero);
+          
+          return buscarEnTablacliente('clientes', 'nombreAscii', 'apellido','id', numero);
           //console.log("Es un número:", numero);
         } else {
           // Si no es un número, puedes cargar una variable de cadena
           const cadena = queryString;
           const queryStringAscii = convertToAscii(queryString)
           //console.log("Es una cadena:", cadena);
-          return buscarEnTablacliente('clientes', 'nombreAscii','id', queryStringAscii);
+          
+          return buscarEnTablacliente('clientes', 'nombreAscii','apellido','id', queryStringAscii);
+          
         }
 
 
@@ -404,6 +443,37 @@ module.exports = {
     //buscarEnTablacliente
     //return buscarEnTabla('clientes', 'nombreAscii', queryStringAscii);
   },
+
+
+
+  findClientesFactura: queryString => {
+    // Verificar si el queryString es un número
+    if (esNumero(queryString)) {
+      // Si es un número, puedes cargar una variable de número
+      const numero = parseInt(queryString);
+      
+      return buscarEnTablaclienteFactura('clientes', 'nombreAscii', 'apellido','id', numero);
+      //console.log("Es un número:", numero);
+    } else {
+      // Si no es un número, puedes cargar una variable de cadena
+      const cadena = queryString;
+      const queryStringAscii = convertToAscii(queryString)
+      //console.log("Es una cadena:", cadena);
+      
+      return buscarEnTablaclienteFactura('clientes', 'nombreAscii','apellido','id', queryStringAscii);
+      
+    }
+
+
+//const queryStringAscii = convertToAscii(queryString);
+
+// const queryStringAscii = 442928;
+
+
+
+//buscarEnTablacliente
+//return buscarEnTabla('clientes', 'nombreAscii', queryStringAscii);
+},
 
   insertarMedico: medico => {
     const nombreAscii = convertToAscii(medico.nombre);
