@@ -24,6 +24,7 @@ const crearTablaClientes = table => {
     .index();
   table.string('nombre', 50).notNullable();
   table.string('direccion', 60);
+  table.string('apellido', 60);
   table.string('email', 10);
   table.string('telefono1', 10);
   table.string('telefono2', 10);
@@ -38,6 +39,7 @@ const crearTablaMedicos = table => {
   table.integer('rowid').primary();
   table.string('nombreAscii', 50).unique();
   table.string('nombre', 50);
+  table.string('apellido', 50);
   table.string('direccion', 60);
   table.string('email', 10);
   table.integer('comision');

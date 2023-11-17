@@ -363,6 +363,7 @@ const productoUpdateSchema = productoRowSchema;
 const medicoRowSchema = {
   rowid: primaryKey(),
   nombre: string(),
+  apellido: string(),
   direccion: string({ fallback: '' }),
   email: email(),
   telefono1: phone(),
@@ -419,6 +420,7 @@ const clienteRowSchema = {
   rowid: primaryKey(),
   id: numericString(),
   nombre: string(),
+  apellido: string(),
   direccion: string({ fallback: '' }),
   email: email(),
   telefono1: phone(),

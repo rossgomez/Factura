@@ -10,6 +10,7 @@ const llenarStateConDatosCorrectos = () => {
   state.inputs = {
     id: '0937816882001',
     nombre: 'Dr. Julio Mendoza',
+    apellido: 'Dr. Julio Mendoza',
     direccion: 'Avenida Juan Tanca Marengo y Gomez Gould',
     email: 'julio_mendoza@yahoo.com.ec',
     telefono1: '2645422',
@@ -109,6 +110,7 @@ describe('Cliente Dialog State', () => {
       const editar = {
         ruc: '0937816882001',
         nombre: 'Dr. Julio Mendoza',
+        apellido: 'Dr. Julio Mendoza',
         direccion: 'Avenida Juan Tanca Marengo y Gomez Gould',
         correo: 'julio_mendoza@yahoo.com.ec',
         telefono1: '2645422',

@@ -72,6 +72,7 @@ describe('/venta_ex/ endpoints', () => {
       api.insertarCliente({
         id: '0937816882001',
         nombre: 'Eduardo Almeida',
+        apellido: 'Almeida',
         direccion: 'Boyaca y Sucre 112',
         email: 'ealmeida@yahoo.com.mx',
         telefono1: '2645422',
@@ -81,6 +82,7 @@ describe('/venta_ex/ endpoints', () => {
       }),
       api.insertarMedico({
         nombre: 'Dr. Juan Coronel',
+        apellido: 'Almeida',
         direccion: 'Avenida Leopoldo Carrera Calvo 493',
         email: 'jcoronel23@yahoo.com.ec',
         comision: '20',
@@ -119,7 +121,7 @@ describe('/venta_ex/ endpoints', () => {
               direccion: '__direccion__'
             }
           },
-          moneda: 'USD',
+          moneda: 'Gs.',
           ambiente: 1,
           totales: {
             total_sin_impuestos: 19.99,

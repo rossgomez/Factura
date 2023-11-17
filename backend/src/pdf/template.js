@@ -19,17 +19,23 @@ const Y4_LINE = 590;
 const unitPriceColumnSeparator = 50;
 
 const drawInvoiceInfoContents = (doc, { ventaRow, clienteRow, comprobanteRow}) => {
-  const { nombre, telefono1, direccion, id } = clienteRow;
+  const { nombre, apellido, telefono1, direccion, id } = clienteRow;
   const { fecha } = ventaRow;
   const { secuencial } = comprobanteRow;
   let fechaFormato = new Date(fecha);
 
-let dia = fechaFormato.getUTCDate();
-let mes = fechaFormato.getUTCMonth() + 1; // Meses son 0 indexados
+
+
+let dia = agregarCero(fechaFormato.getUTCDate());
+let mes = agregarCero(fechaFormato.getUTCMonth() + 1); // Meses son 0 indexados
 let año = fechaFormato.getUTCFullYear();
-let hora = fechaFormato.getUTCHours();
-let minuto = fechaFormato.getUTCMinutes();
-  
+let hora = agregarCero(fechaFormato.getUTCHours());
+let minuto = agregarCero(fechaFormato.getUTCMinutes());
+// Ejemplo de uso:
+const comprobante = leftPad(secuencial, 6, '0');
+
+const apellidoValidado = apellido === null ? '' : apellido;
+
 
     // Formateamos la fecha según tus necesidades
   let fechaFormateada = `${dia}/${mes}/${año} ${hora}:${minuto}`;
@@ -46,15 +52,35 @@ let minuto = fechaFormato.getUTCMinutes();
   doc
   .text('Timbrado: 123456' )
   .text('Ini: 01/01/2023 '+ 'Venc: 28/08/2023')
-  .text('Comprobante: 001-001-000'+secuencial)
+  .text('Comprobante: 001-001-'+comprobante)
   .text('Fecha de emision: '+ fechaFormateada)
-  .text('Nombre: ' + nombre)
+  .text('Nombre: ' + nombre +' ' + apellidoValidado)
   .text('RUC: '+ id)  
   .text('Dirección: ' +direccion)
   .text('Teléfono: '+telefono1)
   .text('---------------------------------------------------');
 
 };
+
+function agregarCero(numero) {
+  return numero < 10 ? '0' + numero : numero;
+}
+function leftPad(str, len, ch) {
+  const padChar = ch !== undefined ? ch.toString() : ' ';
+  const strValue = str.toString();
+
+  if (strValue.length >= len) {
+      return strValue;
+  } else {
+      const padding = Array(len - strValue.length + 1).join(padChar);
+      return padding + strValue;
+  }
+}
+
+
+
+
+
 
 const drawFacturableLine = (doc, facturable, detallado, pos) => {
   

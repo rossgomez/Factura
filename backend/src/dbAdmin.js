@@ -131,6 +131,7 @@ const findAllVentas = (empresa, nombreCliente) => {
       'empresa',
       'fecha',
       'nombre',
+      'apellido',
       'iva',
       'descuento',
       'autorizacion',

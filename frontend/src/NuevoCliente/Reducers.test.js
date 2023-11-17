@@ -21,6 +21,7 @@ describe('Nuevo socio reducers', () => {
       },
       { type: Actions.updateInput, key: 'id', value: '9999999999' },
       { type: Actions.updateInput, key: 'nombre', value: 'Consumidor Final' },
+      { type: Actions.updateInput, key: 'apeliido', value: 'Consumidor Final' },
       {
         type: Actions.updateInput,
         key: 'direccion',
@@ -40,6 +41,7 @@ describe('Nuevo socio reducers', () => {
     expect(inserted).toEqual({
       id: '9999999999',
       nombre: 'Consumidor Final',
+      apellido: 'Consumidor Final',
       direccion: 'Malecon y 9 de Octubre',
       email: 'none@gmail.com',
       telefono1: '555555',
@@ -63,6 +65,7 @@ describe('Nuevo socio reducers', () => {
       rowid: 1,
       id: '9999999999',
       nombre: 'Consumidor Final',
+      apellido: 'Consumidor Final',
       direccion: 'Malecon y 9 de Octubre',
       email: 'none@gmail.com',
       telefono1: '555555',
@@ -81,6 +84,7 @@ describe('Nuevo socio reducers', () => {
       expect.objectContaining({
         rowid: 1,
         nombre: 'Consumidor Final',
+        apellido: 'Consumidor Final',
         direccion: 'Guayaquil',
         email: 'none@somewhere.com'
       })

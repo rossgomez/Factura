@@ -32,7 +32,7 @@ export default class NuevoClienteForm extends React.Component {
     };
 
     const idInput = {
-      hintText: '#ID',
+      hintText: '#Cedula/RUC',
       icon: Info,
       value: inputs.id || '',
       errorText: errors.id,
@@ -53,7 +53,7 @@ export default class NuevoClienteForm extends React.Component {
     };
 
     const clienteInput = {
-      hintText: 'Socio',
+      hintText: 'Nombre',
       icon: Person,
       value: inputs.nombre || '',
       errorText: errors.nombre,
@@ -62,7 +62,17 @@ export default class NuevoClienteForm extends React.Component {
       }
     };
 
-    const telf2Input = {
+    const clienteInput2 = {
+      hintText: 'Apellido',
+      icon: Person,
+      value: inputs.apellido || '',
+      errorText: errors.apellido,
+      onChange: event => {
+        updateData('apellido', event.target.value);
+      }
+    };
+
+    /* const telf2Input = {
       hintText: 'Teléfono 2',
       icon: Phone,
       value: inputs.telefono2 || '',
@@ -70,7 +80,7 @@ export default class NuevoClienteForm extends React.Component {
       onChange: event => {
         updateData('telefono2', event.target.value);
       }
-    };
+    }; */
 
     const direccionInput = {
       hintText: 'Dirección',
@@ -92,7 +102,7 @@ export default class NuevoClienteForm extends React.Component {
       }
     };
 
-    const descDefaultInput = {
+    /*  const descDefaultInput = {
       hintText: 'Descuento recomendado (%)',
       icon: Loyalty,
       value: inputs.descDefault || '',
@@ -100,17 +110,20 @@ export default class NuevoClienteForm extends React.Component {
       onChange: event => {
         updateData('descDefault', event.target.value);
       }
-    };
+    }; */
 
     return (
       <table>
         <tbody>
           <IconTextFieldRow leftInput={tipoInput} rightInput={idInput} />
-          <IconTextFieldRow leftInput={clienteInput} rightInput={emailInput} />
-          <IconTextFieldRow leftInput={telf1Input} rightInput={telf2Input} />
+          <IconTextFieldRow
+            leftInput={clienteInput}
+            rightInput={clienteInput2}
+          />
+          <IconTextFieldRow leftInput={telf1Input} rightInput={emailInput} />
           <IconTextFieldRow
             leftInput={direccionInput}
-            rightInput={descDefaultInput}
+            //rightInput={descDefaultInput}
           />
           {/* An additional empty row prevents jittering in the dialog */}
           <IconTextFieldRow empty={true} />

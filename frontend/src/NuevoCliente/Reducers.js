@@ -27,6 +27,7 @@ export const getDefaultState = cliente => {
       tipoText: '',
       tipo: undefined,
       nombre: '',
+      apellido: '',
       direccion: '',
       email: '',
       telefono1: '',

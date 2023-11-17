@@ -12,7 +12,7 @@ const calcularTotalVentaRow = ventaRow => {
   const { subtotal, flete, iva, descuento } = ventaRow;
   const rebaja = Math.floor((subtotal * descuento) / 100);
   const impuestos = Math.floor(((subtotal - rebaja) * iva) / 100);
-  return subtotal + flete + impuestos - rebaja;
+  return subtotal ;
 };
 
 const calcularSubtotal = unidades => {

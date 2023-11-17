@@ -13,10 +13,11 @@ const ColumnTypes = MaterialTable.ColumnTypes;
 //const columns = ['# Comprobante', 'Empresa', 'Fecha', 'Cliente', 'Total'];
 //const keys = ['comprobante', 'empresa', 'fechaText', 'nombre', 'total'];
 
-const columns = ['# Comprobante', 'Socio', 'Fecha', 'Total'];
-const keys = ['comprobante', 'nombre', 'fechaText', 'total'];
+const columns = ['# Comprobante', 'Nombre', 'Apellido', 'Fecha', 'Total'];
+const keys = ['comprobante', 'nombre', 'apellido', 'fechaText', 'total'];
 
 const columnTypes = [
+  ColumnTypes.string,
   ColumnTypes.string,
   ColumnTypes.string,
   ColumnTypes.string,

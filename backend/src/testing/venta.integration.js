@@ -23,6 +23,7 @@ const { getComprobanteFromVenta } = require('../dbAdmin.js');
 const consumidorFinal = Object.freeze({
   id: '99999999999',
   nombre: 'CONSUMIDOR FINAL',
+  apellido: 'CONSUMIDOR FINAL',
   direccion: '-',
   email: 'none@gmail.com',
   telefono1: '999999',
@@ -34,6 +35,7 @@ const consumidorFinal = Object.freeze({
 const baseClienteRow = Object.freeze({
   id: '0937816882001',
   nombre: 'Dr. Julio Mendoza',
+  apellido: 'Dr. Julio Mendoza',
   direccion: 'Via a Samborondon km. 7.5 Vista Sol',
   email: 'julio_mendoza@yahoo.com.ec',
   telefono1: '2645422',
@@ -190,7 +192,7 @@ describe('/venta/ endpoints', () => {
                 direccion: '__direccion__'
               }
             },
-            moneda: 'USD',
+            moneda: 'Gs.',
             ambiente: 1,
             totales: {
               total_sin_impuestos: 49.99,

@@ -6,6 +6,7 @@ describe('Validacion', () => {
       const cliente = {
         id: '0954678865001',
         nombre: 'Gustavo Quinteros',
+        apellido: 'Quinteros',
         telefono1: '566543',
         direccion: 'calle 34',
         email: 'gquinteros@gmail.com',
@@ -18,6 +19,7 @@ describe('Validacion', () => {
       expect(inputs).toEqual({
         id: '0954678865001',
         nombre: 'Gustavo Quinteros',
+        apellido: 'Quinteros',
         telefono1: '566543',
         telefono2: '',
         direccion: 'calle 34',

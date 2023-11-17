@@ -18,6 +18,7 @@ export const getDefaultState = medico => {
   return {
     inputs: {
       nombre: '',
+      apellido: '',
       direccion: '',
       email: '',
       telefono1: '',

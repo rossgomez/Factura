@@ -11,7 +11,7 @@ const getComprobanteFromVenta = venta => {
 
   if (!venta.id) return 'Pendiente';
 
-  return leftPad(venta.secuencial, 9, 0);
+  return leftPad(venta.secuencial, 6, 0);
 };
 
 export default class ListState {

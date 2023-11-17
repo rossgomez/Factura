@@ -94,6 +94,7 @@ const crearComprador = clienteRow => {
   return {
     razon_social: clienteRow.nombre,
     identificacion: clienteRow.id,
+    apellido: clienteRow.apellido,
     tipo_identificacion: codigosId[clienteRow.tipo],
     email: clienteRow.email,
     telefono: clienteRow.telefono1,

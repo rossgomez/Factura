@@ -17,7 +17,8 @@ describe('/cliente/ endpoints', () => {
     it('retorna 200 al ingresar datos correctos', async () => {
       const resp = await api.insertarCliente({
         id: '0937816882001',
-        nombre: 'Dr. Julio Mendoza',
+        nombre: 'Dr. Julio',
+        apellido: 'Mendoza',
         direccion: 'Avenida Juan Tanca Marengo y Gomez Gould',
         email: 'julio_mendoza@yahoo.com.ec',
         telefono1: '2645422',
@@ -31,7 +32,8 @@ describe('/cliente/ endpoints', () => {
     it('retorna 422 al ingresar cliente con un ruc ya existente', () => {
       const cliente = {
         id: '0914816792001',
-        nombre: 'Eduardo Villacreses',
+        nombre: 'Eduardo ',
+        apellido: 'Villacreses',
         direccion:
           'Via a Samborondon km. 7.5 Urbanizacion Tornasol mz. 5 villa 20',
         email: 'edu_vc@outlook.com',

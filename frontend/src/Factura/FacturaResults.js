@@ -47,7 +47,7 @@ const ResultsTable = props => {
         <tbody>
           <tr>
             <td>
-              <strong>Exetas: ₲</strong>
+              <strong>Exentas: ₲</strong>
             </td>
             <td style={{ paddingLeft: '20px' }}>{subtotal}</td>
           </tr>
