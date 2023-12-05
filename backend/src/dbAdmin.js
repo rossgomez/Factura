@@ -138,7 +138,8 @@ const findAllVentas = (empresa, nombreCliente) => {
       'flete',
       'detallado',
       'subtotal',
-      'ventas.tipo'
+      'ventas.tipo',
+      'clientes.id as cliente_id'
     )
     .from('ventas')
     .join('clientes', { 'ventas.cliente': 'clientes.rowid' })

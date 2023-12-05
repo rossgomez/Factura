@@ -1,5 +1,6 @@
 import {
   toReadableDateTime,
+  toReadableDate,
   parseDBDate
 } from 'facturacion_common/src/DateParser.js';
 import Money from 'facturacion_common/src/Money.js';
@@ -27,7 +28,7 @@ export default class ListState {
   colocarVentas(listaVentas) {
     const rows = listaVentas.map(venta => {
       const { fecha } = venta;
-      const fechaText = toReadableDateTime(parseDBDate(fecha));
+      const fechaText = toReadableDate(parseDBDate(fecha));
       const total = Money.print(calcularTotalVentaRow(venta));
       const comprobante = getComprobanteFromVenta(venta);
       return {

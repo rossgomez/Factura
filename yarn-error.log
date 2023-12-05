@@ -1,0 +1,27 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Administrador\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add date-fns@2.22.1 locale/en-US
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\composer;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Administrador\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\Administrador\AppData\Local\Programs\Python\Python312\;C:\Users\Administrador\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrador\AppData\Local\Programs\Microsoft VS Code\bin;C:\xampp\php;C:\xampp;C:\Users\Administrador\AppData\Roaming\Composer\vendor\bin;C:\sqlite-dll-win64-x64-3430100;C:\src\sqlite-dll-win64-x64-3430100;C:\Users\Administrador\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  10.24.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ETIMEDOUT 20.201.28.151:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1107:14)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
