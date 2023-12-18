@@ -50,8 +50,9 @@ const apellidoValidado = apellido === null ? '' : apellido;
   .text('---------------------------------------------------')
   doc.lineGap(4);
   doc
-  .text('Timbrado: 123456' )
-  .text('Ini: 01/01/2023 '+ 'Venc: 28/08/2023')
+  .text('Timbrado: 16743315' )
+  .text('Ini: 16/10/2023 '+ 'Venc: 31/10/2024')
+  .text('RUC: 80076860-4' )
   .text('Comprobante: 001-001-'+comprobante)
   .text('Fecha de emision: '+ fechaFormateada)
   .text('Nombre: ' + nombre +' ' + apellidoValidado)

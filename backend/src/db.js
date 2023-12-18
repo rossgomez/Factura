@@ -6,6 +6,7 @@ module.exports = require('knex')({
   connection: {
     filename: __dirname + dbFile
   },
+  useNullAsDefault: true, // Agrega esta línea
   pool: {
     afterCreate: (conn, cb) => {
       conn.run('PRAGMA foreign_keys = ON', cb);
