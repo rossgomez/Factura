@@ -1,7 +1,7 @@
 const request = require('superagent');
 
 const prefix =
-  process.env.NODE_ENV === 'integration' ? 'http://localhost:8192' : '';
+  process.env.NODE_ENV === 'integration' ? 'http://192.168.109.43:8192' : '';
 
 const getFacturaURL = id => {
   return `${prefix}/venta/ver/${id}`;
@@ -58,6 +58,10 @@ module.exports = {
       .set('Accept', 'application/json');
   },
 
+
+
+
+  
   findProductos: ({ pagaIva, queryString, limit }) => {
     let path = `/producto/find?queryString=${queryString}`;
     if (limit && typeof pagaIva === 'boolean') {
@@ -73,7 +77,7 @@ module.exports = {
     }
   
     return request.get(prefix + path).send();
-  },
+  }, 
 
   deleteProducto: rowid => {
     return request.post(prefix + `/producto/delete/${rowid}`).send();
@@ -97,9 +101,15 @@ module.exports = {
       .set('Accept', 'application/json');
   },
 
-  findAllVentas: (empresa, cliente) => {
+  archivoBase: () => {
     return request
-      .get(`${prefix}/venta/find?empresa=${empresa}&cliente=${cliente}`)
+      .get(`${prefix}/obtener-archivo-baseempresa=${empresa}&cliente=${cliente}&fechaDesde=${fechaDesde}&fechaHasta=${fechaHasta}`)
+      .send();
+  },
+
+  findAllVentas: (empresa, cliente, fechaDesde, fechaHasta) => {
+    return request
+      .get(`${prefix}/venta/find?empresa=${empresa}&cliente=${cliente}&fechaDesde=${fechaDesde}&fechaHasta=${fechaHasta}`)
       .send();
   },
 

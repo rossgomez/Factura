@@ -318,11 +318,29 @@ app.post('/venta/delete/:rowid', validarVentaMutable('params'), (req, res) => {
   );
 });
 
+
+app.get('/obtener-archivo-base', (req, res) => {
+  const filePath = 'C:/Repo/Facturacion/frontend/src/FacturasList/IPS_PLANILLA.xlsx'; // Ruta al archivo que deseas enviar
+
+  // Verificar si el archivo existe
+  if (fs.existsSync(filePath)) {
+    // Leer el archivo y enviarlo como respues
+    const fileStream = fs.createReadStream(filePath);
+    fileStream.pipe(res);
+  } else {
+    res.status(404).send('Archivo no encontrado');
+  }
+});
+
+
+
 app.get('/venta/find', (req, res) => {
   const cliente = req.query.cliente || '';
   const empresa = req.query.empresa || '';
+  const fechaDesde = req.query.fechaDesde || '';
+  const fechaHasta = req.query.fechaHasta || '';
 
-  db.findAllVentas(empresa, cliente).then(
+  db.findAllVentas(empresa, cliente, fechaDesde, fechaHasta).then(
     ventas => {
       if (ventas.length === 0)
         res

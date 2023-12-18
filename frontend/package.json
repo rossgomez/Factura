@@ -2,7 +2,7 @@
   "name": "facturacion",
   "version": "1.0.0",
   "private": true,
-  "proxy": "http://localhost:8192",
+  "proxy": "http://192.168.109.43:8192",
   "devDependencies": {
     "husky": "^1.1.4",
     "lint-staged": "^8.0.4",
@@ -14,6 +14,7 @@
     "@date-io/date-fns": "^2.17.0",
     "@material-ui/core": "^4.0.0",
     "@material-ui/pickers": "^3.3.11",
+    "axios": "^1.6.2",
     "create-react-context": "^0.3.0",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
@@ -27,7 +28,8 @@
     "react-router-dom": "^5.0.1",
     "react-tap-event-plugin": "2.0.1",
     "typeface-roboto": "0.0.22",
-    "xlsx": "0.17.5"
+    "xlsx": "0.17.5",
+    "xlsx-populate": "^1.21.0"
   },
   "scripts": {
     "start": "react-scripts start",

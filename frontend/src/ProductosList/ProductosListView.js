@@ -5,7 +5,7 @@ import MaterialTable from '../lib/MaterialTable';
 import ListState from './ListState';
 
 const ColumnTypes = MaterialTable.ColumnTypes;
-const columns = ['Concepto', 'Precio Venta'];
+const columns = ['Concepto', 'Monto'];
 const keys = ['codigo', 'precioVentaText'];
 const columnTypes = [ColumnTypes.string, ColumnTypes.numeric];
 const searchHint = 'Buscar Conceptos...';

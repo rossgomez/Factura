@@ -121,9 +121,9 @@ const getVentaRow = rowid => {
     .where({ rowid });
 };
 
-const findAllVentas = (empresa, nombreCliente) => {
+const findAllVentas = (empresa, nombreCliente, fechaDesde, fechaHasta) => {
   const nombreClienteAscii = convertToAscii(nombreCliente);
-  return knex
+  let query = knex
     .select(
       'ventas.rowid',
       'secuencial',
@@ -147,8 +147,33 @@ const findAllVentas = (empresa, nombreCliente) => {
     .where('nombreAscii', 'like', `%${nombreClienteAscii}%`)
     .where('empresa', empresa)
     .orderBy('apellido', 'asc');
-    
+
+  // Filtrar por fechaDesde si está presente
+  if (fechaDesde) {
+    query = query.where('fecha', '>=', fechaDesde);
+  }
+
+  // Filtrar por fechaHasta si está presente
+  if (fechaHasta) {
+    // Convertir fechaHasta a un objeto Date
+    const fechaHastaObj = new Date(fechaHasta);
+
+    // Sumar un día a la fechaHasta
+    fechaHastaObj.setDate(fechaHastaObj.getDate() + 2);
+     // Obtener año, mes y día
+    const year = fechaHastaObj.getFullYear();
+    const month = String(fechaHastaObj.getMonth() + 1).padStart(2, '0');
+    const day = String(fechaHastaObj.getDate()).padStart(2, '0');
+
+    // Formatear en una cadena 'YYYY-MM-DD'
+    const fechaHastaString = `${year}-${month}-${day}`;
+    console.log(fechaHastaString)
+    query = query.where('fecha', '<=', fechaHastaString);
+  }
+
+  return query;
 };
+
 
 const getCliente = rowid => {
   return knex
@@ -311,18 +336,21 @@ const findProductos = ({ pagaIva, queryString, limit }) => {
     ])
     .from('productos')
     //.join('productosFts', { 'productos.ftsid': 'productosFts.rowid' })
-    .limit(limit);
     
-  if (queryString) {
-    if (typeof pagaIva === 'number')
-      return baseQuery
-        //.where('productosFts.nombre', 'MATCH', queryString + '*')
-        .where({ pagaIva });
-
-   // return baseQuery.where('productosFts.nombre', 'MATCH', queryString + '*');
-    return baseQuery;
-
-  }
+    
+    if (queryString) {
+      if (typeof pagaIva === 'number') {
+        return baseQuery
+          .where('codigo', 'like', `%${queryString}%`)
+          .andWhere({ pagaIva });
+      } else {
+        return baseQuery.where('codigo', 'like', `%${queryString}%`);
+      }
+    }
+  
+    if (typeof pagaIva === 'number') {
+      return baseQuery.where({ pagaIva });
+    }
   //if (typeof pagaIva === 'number') return baseQuery.where({ pagaIva });
 
   return baseQuery;

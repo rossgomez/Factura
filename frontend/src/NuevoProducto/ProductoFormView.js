@@ -31,7 +31,7 @@ export default class ProductoFormView extends React.Component {
       }
     };
 
-    const precioFabInput = {
+    /* const precioFabInput = {
       hintText: 'Precio Distribuidora',
       icon: AttachMoney,
       value: inputs.precioDistText || '',
@@ -39,7 +39,7 @@ export default class ProductoFormView extends React.Component {
       onChange: event => {
         updateData('precioDist', event.target.value);
       }
-    };
+    }; */
 
     const precioVentaInput = {
       hintText: 'Precio Venta',
@@ -51,7 +51,7 @@ export default class ProductoFormView extends React.Component {
       }
     };
 
-    const marcaInput = {
+    /* const marcaInput = {
       hintText: 'Marca',
       icon: Label,
       value: inputs.marca || '',
@@ -59,7 +59,7 @@ export default class ProductoFormView extends React.Component {
       onChange: event => {
         updateData('marca', event.target.value);
       }
-    };
+    }; */
 
     const pagaIvaInput = {
       hintText: 'paga IVA',
@@ -74,10 +74,10 @@ export default class ProductoFormView extends React.Component {
         <tbody>
           <IconTextFieldRow leftInput={nombreInput} rightInput={codigoInput} />
           <IconTextFieldRow
-            leftInput={precioFabInput}
+            //  leftInput={precioFabInput}
             rightInput={precioVentaInput}
           />
-          <IconTextFieldRow leftInput={marcaInput} boolInput={pagaIvaInput} />
+          {/* <IconTextFieldRow leftInput={marcaInput} boolInput={pagaIvaInput} /> */}
         </tbody>
       </table>
     );
