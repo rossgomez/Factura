@@ -50,15 +50,15 @@ const apellidoValidado = apellido === null ? '' : apellido;
   .text('---------------------------------------------------')
   doc.lineGap(4);
   doc
-  .text('Timbrado: 16743315' )
-  .text('Ini: 16/10/2023 '+ 'Venc: 31/10/2024')
+  .text('Timbrado: 17252383' )
+  .text('Inicio de vigencia: 30/05/2024')
   .text('RUC: 80076860-4' )
-  .text('Comprobante: 001-001-'+comprobante)
+  .text('Factura Virtual: 001-002-'+comprobante)
   .text('Fecha de emision: '+ fechaFormateada)
   .text('Nombre: ' + nombre +' ' + apellidoValidado)
   .text('RUC: '+ id)  
-  .text('Dirección: ' +direccion)
-  .text('Teléfono: '+telefono1)
+  //.text('Dirección: ' +direccion)
+  //.text('Teléfono: '+telefono1)
   .text('---------------------------------------------------');
 
 };

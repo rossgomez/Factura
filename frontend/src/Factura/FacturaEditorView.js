@@ -13,7 +13,7 @@ import { updateState } from '../Arch.js';
 import { calcularValoresFacturables } from 'facturacion_common/src/Math.js';
 import appSettings from '../Ajustes';
 
-const getDatilURL = id => `http://localhost:8192/venta/ver/${id}`;
+const getDatilURL = id => `http://181.120.103.108:8192/venta/ver/${id}`;
 
 const getInsertOkMsg = editar =>
   editar

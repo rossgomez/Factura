@@ -2,7 +2,7 @@
   "name": "facturacion",
   "version": "1.0.0",
   "private": true,
-  "proxy": "http://localhost:8192",
+  "proxy": "http://181.120.103.108:8192",
   "devDependencies": {
     "husky": "^1.1.4",
     "lint-staged": "^8.0.4",
