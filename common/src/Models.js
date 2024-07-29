@@ -5,15 +5,7 @@ const Money = require('./Money.js');
 
 const FormasDePago = deepFreeze({
   efectivo: 'EFECTIVO',
-  cheque: 'CHEQUE',
-  dinero_electronico_ec: 'DINERO ELECTRÓNICO',
-  debito_cuenta_bancaria: 'DEBITO CTA. BANCARIA',
-  transferencia: 'TRANSFERENCIA',
-  deposito_cuenta_bancaria: 'DEPÓSITO CTA. BANCARIA',
-  tarjeta_debito: 'TARJETA DE DÉBITO',
-  tarjeta_credito: 'TARJETA DE CRÉDITO',
-  tarjeta_legacy: 'TARJETA DE CRÉDITO/DÉBITO',
-  otros: 'OTRO'
+ 
 });
 
 const TiposID = deepFreeze({
