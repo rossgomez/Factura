@@ -165,7 +165,7 @@ export default class FacturasListView extends React.Component {
 
   exportToExcel = () => {
     axios
-      .get(`http://181.120.103.108:8192/obtener-archivo-base`, {
+      .get(`http://192.168.0.4:8192/obtener-archivo-base`, {
         responseType: 'arraybuffer'
       })
       .then(response => {
