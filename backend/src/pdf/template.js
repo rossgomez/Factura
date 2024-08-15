@@ -52,6 +52,7 @@ const apellidoValidado = apellido === null ? '' : apellido;
   doc
   .text('Timbrado: 17252383' )
   .text('Inicio de vigencia: 30/05/2024')
+  .text('Fin de vigencia: 31/05/2025')
   .text('RUC: 80076860-4' )
   .text('Factura Virtual: 001-002-'+comprobante)
   .text('Fecha de emision: '+ fechaFormateada)
