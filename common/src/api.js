@@ -1,7 +1,7 @@
 const request = require('superagent');
 
 const prefix =
-  process.env.NODE_ENV === 'integration' ? 'http://192.168.0.4:8192' : '';
+  process.env.NODE_ENV === 'integration' ? 'http://192.168.43.167:8192' : '';
 
 const getFacturaURL = id => {
   return `${prefix}/venta/ver/${id}`;

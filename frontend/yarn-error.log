@@ -31,7 +31,7 @@ npm manifest:
     "name": "facturacion",
     "version": "1.0.0",
     "private": true,
-    "proxy": "http://192.168.0.4:8192",
+    "proxy": "http://192.168.43.167:8192",
     "devDependencies": {
       "husky": "^1.1.4",
       "lint-staged": "^8.0.4",
